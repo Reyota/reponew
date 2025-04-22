@@ -134,5 +134,16 @@ echo "  • mirror-ubuntu.sh         → 23:00"
 echo "  • debian-mirror.sh         → 00:00"
 echo "  • debian-mirror-update.sh  → 01:00"
 
+echo -e "\n=== [8] Mengecek Direktori Log ==="
+
+log_dir="$new_home/log"
+
+if [[ -d "$log_dir" ]]; then
+    echo "✓ Direktori log sudah ada di $log_dir"
+else
+    echo "✗ Direktori log belum ada. Membuat direktori log di $log_dir..."
+    mkdir -p "$log_dir" && echo "✓ Direktori log berhasil dibuat." || echo "✗ Gagal membuat direktori log."
+fi
+
 
 echo -e "\n🎉 Semua proses selesai!"
