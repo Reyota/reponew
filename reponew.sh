@@ -42,6 +42,7 @@ for dir in "${script_dirs[@]}"; do
         sed -i "s|/mnt/mirror|$new_mirror|g" "$file"
         sed -i "s|\$token-telegram|$input_token|g" "$file"
         sed -i "s|\$chatid-telegram|$input_chatid|g" "$file"
+        chmod +x "$file"
         echo "✓ $file berhasil diperbarui."
     done
 done
