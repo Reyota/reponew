@@ -116,14 +116,23 @@ cron_job_ubuntu="0 23 * * * bash $new_home/mirror-ubuntu/mirror-ubuntu.sh"
 cron_job_debian="0 0 * * * bash $new_home/mirror-debian/debian-mirror.sh"
 cron_job_debian_update="0 1 * * * bash $new_home/mirror-debian/debian-mirror-update.sh"
 
-# Ambil crontab saat ini, lalu tambahkan entri baru jika belum ada
-(crontab -l 2>/dev/null; echo "$cron_job_ubuntu") | grep -Fxq "$cron_job_ubuntu" || (crontab -l 2>/dev/null; echo "$cron_job_ubuntu") | crontab -
-(crontab -l 2>/dev/null; echo "$cron_job_debian") | grep -Fxq "$cron_job_debian" || (crontab -l 2>/dev/null; echo "$cron_job_debian") | crontab -
-(crontab -l 2>/dev/null; echo "$cron_job_debian_update") | grep -Fxq "$cron_job_debian_update" || (crontab -l 2>/dev/null; echo "$cron_job_debian_update") | crontab -
+# Simpan crontab sekarang ke variabel
+existing_cron=$(crontab -l 2>/dev/null || true)
+
+# Tambahkan hanya jika belum ada
+new_cron="$existing_cron"
+
+[[ "$existing_cron" != *"$cron_job_ubuntu"* ]] && new_cron+=$'\n'"$cron_job_ubuntu"
+[[ "$existing_cron" != *"$cron_job_debian"* ]] && new_cron+=$'\n'"$cron_job_debian"
+[[ "$existing_cron" != *"$cron_job_debian_update"* ]] && new_cron+=$'\n'"$cron_job_debian_update"
+
+# Tambahkan ke crontab
+echo "$new_cron" | crontab -
 
 echo "✓ Jadwal crontab ditambahkan (jika belum ada):"
 echo "  • mirror-ubuntu.sh         → 23:00"
 echo "  • debian-mirror.sh         → 00:00"
 echo "  • debian-mirror-update.sh  → 01:00"
+
 
 echo -e "\n🎉 Semua proses selesai!"
