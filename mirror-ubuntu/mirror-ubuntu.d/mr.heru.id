@@ -1,0 +1,5 @@
+#This file is dot-sourced so use bash syntax!
+name='ubuntu'
+releases=('jammy' 'jammy-updates' 'jammy-backports' 'jammy-proposed' 'jammy-security' 'focal' 'focal-updates' 'focal-backports' 'focal-proposed' 'focal-security' 'noble' 'noble-updates' 'noble-backports' 'noble-proposed' 'noble-security')
+repositories=('main' 'restricted' 'universe' 'multiverse')
+architectures=( 'amd64')
