@@ -37,3 +37,5 @@ Script Bash ini dibuat untuk **mengatur otomatisasi pengaturan mirror Debian & U
 - Nama rsync config untuk Debian & Ubuntu
 - Release & arsitektur yang diinginkan
 4. Setelah selesai, semua pengaturan akan diperbarui dan cron akan ditambahkan.
+
+Script Mirror Rsync ini saya modifikasi dari user Git bernama Gargravarr2112 yang sudah saya sesuaikan dan reset sesuai kebutuhan dan bisa digunakan. Lebih detail bisa kunjungi link ini untuk Script Aslinya https://github.com/Gargravarr2112/mirror-rsync 
