@@ -13,8 +13,8 @@ syncDate=$(date +%F);
 sourceFolder='/home/reponew/mirror-debian/mirror-rsync.d';
 baseDirectory="/mnt/mirror";
 #New Feature
-telegram_token="898011459:AAHEmhSlcXBEahO5sUl3ytmm8YjWZiAAeLU"  # Ganti dengan token bot Telegram Anda
-chat_id="954109239"           # Ganti dengan Chat ID Anda
+telegram_token="$token-telegram"  # Ganti dengan token bot Telegram Anda
+chat_id="$chatid-telegram"           # Ganti dengan Chat ID Anda
 log_file_success1="/home/log/debianupdates-pool-$syncDate.log"  # Log file yang ingin dikirim
 log_file_success2="/home/log/debianupdatesnew-dists--$syncDate.log"  # Log file yang ingin dikirim
 
