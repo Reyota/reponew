@@ -28,7 +28,7 @@ send_telegram_message() {
 }
 
 # Notifikasi bahwa skrip telah dimulai
-start_message="🚀 *Mirror sync Ubuntu* script started on $syncDate.0%A Syncing process has begun."
+start_message="🚀 *Mirror sync Ubuntu* script started on $syncDate.%0A Syncing process has begun."
 send_telegram_message "$start_message"
 
 #Basic checks
