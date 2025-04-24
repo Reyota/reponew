@@ -27,7 +27,7 @@ send_telegram_message() {
     -d parse_mode="Markdown"
 }
 # Notifikasi bahwa skrip telah dimulai
-start_message="🚀 *Mirror sync Debian Security Updates* started on $syncDate.%0A Syncing process has begun."
+start_message="🚀 *Mirror sync Debian Archive Main* started on $syncDate.%0A Syncing process has begun."
 send_telegram_message "$start_message"
 
 #Basic checks
